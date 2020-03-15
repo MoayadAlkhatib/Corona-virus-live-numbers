@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antalet Coronavirus fall i Sverige </title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="icon" type="image/jpg" href="image.jpg" >
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+<body>
+    <div class = "title">
+       Antal Coronavirus fall i Sverige 
+    </div>
+    <div class = "header">
+        Antalet fall:
+        <div class="nums" id = "cases"></div>
+    </div>
+
+    <div class = "header">
+        Antalet dödsfall:
+        <div class="nums" id="deathes">
+        </div>
+    </div>
+
+    <div class = "header">
+        Nya fall:
+        <div class="nums" id ="newcases"></div>
+    </div>
+
+    <div class = "header">
+        Nya dödsfall:
+        <div class="nums" id="newdeaths"></div>
+    </div>
+
+    <div class="title">
+        Antal Coronavirus fall i hela världen 
+    </div>
+
+    <div class ="header">
+    </br>
+        Antalet fall:
+        <div class="nums" id ="cases1"></div>
+    </div>
+
+    <div class ="header">
+        Antalet dödsfall:
+        <div class="nums" id ="deaths1"></div>
+    </div>
+
+    <div class ="header">
+        Nya fall:
+        <div class="nums" id ="newcases1"></div>
+    </div>
+
+    <div class ="header">
+        Nya dödsfall:
+        <div class="nums" id ="newdeaths1"></div>
+    </div>
+
+    <canvas id="myChart" hight=1000 width="1000"></canvas>
+
+    <script type="text/javascript" src="index.js"></script>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.11.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.11.0/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+</body>
+</html>
