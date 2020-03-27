@@ -1,5 +1,6 @@
 const myLabels= [];
 const fall=[];
+let resp= [];
 
 draw();
 
@@ -13,9 +14,26 @@ async function getData(){
 })
 .then(response => {return response.json()})
 .then(data =>{return data.countries_stat})
+.then(data => { 
+    resp = data.map(x => {
+        let obj = x;
+        obj.cases = obj.cases.replace(",", "")
+        return obj;
+    });
+    //console.log(resp);
+    return resp;
+    })
+
+.then(dat => {
+        dat.sort(function (a, b) {
+            return  b.cases - a.cases;
+          });
+          return dat;
+          //console.log(dat);
+        })
 .then(data => {
     for(let i = 0; i<data.length; i++){
-        fall.push(parseFloat(data[i].cases.replace(",","")));
+        fall.push(parseFloat(data[i].cases));
         myLabels.push(data[i].country_name);
         if (data[i].country_name == "Sweden"){
             return data[i]
@@ -100,7 +118,7 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    maxTicksLimit: 6
+                    fontSize: 7
                 }
             }]
         }
