@@ -76,6 +76,7 @@ fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
 async function draw(){
 await getData();
 var ctx = document.getElementById('myChart').getContext('2d');
+
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -115,7 +116,11 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
-        scales: {
+        scales: {xAxes: [{
+            ticks: {
+             fontSize: 7
+            }
+           }],
             yAxes: [{
                 ticks: {
                     fontSize: 7
